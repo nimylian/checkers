@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 	var redTile = "<div class='red_tile'></div>"
 	var blackTile = "<div class='black_tile'></div>"
-	var redPiece = "<button class='red_piece'></button>"
+	var redPiece = "<button class='red_piece' type='red'></button>"
 	var blackPiece = "<button class='black_piece'></button>"
 
 	var containerWidth = $('.container').width()
@@ -26,10 +26,10 @@ $(document).ready(function() {
 	for (var i=20; i<32; i++){
 		$('.black_tile').eq(i).append(redPiece);
 	}
-	
-	$(document).on( "click", ".red_piece", function(event) {
 
-		if ($(event.target).attr('class') === 'red_piece'){ 
+	$(document).on( "click", ".red_piece[type='red]", function(event) {
+
+		if ($(event.target).attr('class') === 'red_piece'){
 			console.log("red piece clicked");
   		$(event.target).remove();
 		}
