@@ -1,4 +1,4 @@
-![Checkers Schama](/./checkers_schama.png 'Checkers Schama')
+![Checkers Schama](./checkers_schama.png 'Checkers Schama')
 
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, http://code.google.com/p/wwwsqldesigner/ -->
