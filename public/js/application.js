@@ -1,9 +1,10 @@
 turn = "red"
+
 $(document).ready(function() {
-	var redTile = "<div class='red_tile'></div>"
-	var blackTile = "<div class='black_tile'></div>"
-	var redPiece = "<button class='piece' name='red'></button>"
-	var blackPiece = "<button class='piece' name='black'></button>"
+	var redTile = "<div class='red tile'></div>"
+	var blackTile = "<div class='black tile'></div>"
+	var redPiece = "<div class='piece' name='red'></div>"
+	var blackPiece = "<div class='piece' name='black'></div>"
 
 	var containerWidth = $('.table-top').width()
 	$('.table-top').css("height", containerWidth)
@@ -19,27 +20,42 @@ $(document).ready(function() {
 		};
 	}
 	for (var i=0; i<12; i++){
-		$('.black_tile').eq(i).append(blackPiece);
+		$('.black').eq(i).append(blackPiece);
 	}
 	for (var i=20; i<32; i++){
-		$('.black_tile').eq(i).append(redPiece);
+		$('.black').eq(i).append(redPiece);
 	}
 
-	$(document).on( "click", ".piece", function(event) {
+	// $( function() {
+	// 	$('.piece').draggable();
+	// 	$('')
 
+	// });
+
+	$(document).on( "click", ".piece", function(event) {
+		console.log(event.target.id)
+		if ( event.target.id !== "selected" && event.altKey === true ) {
+			$(event.target).remove();
+		}
 		if ($(event.target).attr('class') === 'piece'){
 			console.log("piece clicked");
-  		$(event.target).remove();
+			$('#selected').removeAttr("id")
+  		$(event.target).attr("id","selected");
 		}
 	});
 
-// Placing Red Pieces - can not be placed where one already exists
-	$(document).on( "click", '.black_tile', function(event) {
-		if ($(event.target).attr('class') === 'black_tile'){
-			if ($(event.target).children().attr('class') === 'piece' || $(event.target).children().attr('class') === 'black_piece')
-		{} else {
-			console.log("success");
-  		$(event.target).append(redPiece);
+// Moving Pieces - can not be placed where one already exists
+	$(document).on( "click", ".black", function(event) {
+		if ($(event.target).attr('class') === 'black tile'){
+			if ($(event.target).children().attr('class') === 'piece'){
+			} else {
+			var movingPiece = $('#selected');
+  		$('#selected').remove();
+  		$(event.target).append(movingPiece);
 		}}
 	});
+
+
+
+
 });
