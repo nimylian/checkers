@@ -1,5 +1,4 @@
 turn = "red"
-
 $(document).ready(function() {
 	var redTile = "<div class='red tile'></div>"
 	var blackTile = "<div class='black tile'></div>"
@@ -9,6 +8,9 @@ $(document).ready(function() {
 	var containerWidth = $('.table-top').width()
 	$('.table-top').css("height", containerWidth)
 	$('.table-top').css("width", containerWidth)
+
+// Board Generation
+	var letter = ['a','b','c','d','e','f','g','h']
 	for (var i=0; i<4; i++){
 		for (var x=0; x<4; x++) {
 		  $('.table-top').append(redTile)
@@ -19,6 +21,7 @@ $(document).ready(function() {
 		  $('.table-top').append(redTile)
 		};
 	}
+//Piece Placement
 	for (var i=0; i<12; i++){
 		$('.black').eq(i).append(blackPiece);
 	}
@@ -26,12 +29,12 @@ $(document).ready(function() {
 		$('.black').eq(i).append(redPiece);
 	}
 
+	// Turns on draggability
 	// $( function() {
 	// 	$('.piece').draggable();
-	// 	$('')
-
 	// });
 
+// Select or Remove Piece
 	$(document).on( "click", ".piece", function(event) {
 		console.log(event.target.id)
 		if ( event.target.id !== "selected" && event.altKey === true ) {
@@ -54,8 +57,4 @@ $(document).ready(function() {
   		$(event.target).append(movingPiece);
 		}}
 	});
-
-
-
-
 });
