@@ -29,7 +29,7 @@ $(document).ready(function() {
 		$('.black').eq(i).append(redPiece);
 	}
 
-	// Turns on draggability
+// Turns on draggability
 	// $( function() {
 	// 	$('.piece').draggable();
 	// });
