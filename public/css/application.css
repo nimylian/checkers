@@ -1,4 +1,4 @@
-.container {
+.table-top {
   position: absolute;
   top:0;bottom:0;left:0;right:0;
   margin: auto;
@@ -6,20 +6,18 @@
   padding: 10px;
 }
 
-.black_piece{
+.piece{
   position: absolute;
-  margin: auto;
+  margin: 10px;
   height: 50px;
   width: 50px;
   border-radius: 25px;
-  background: linear-gradient(to bottom right, #b3b3b3, #300);
 }
-.red_piece{
-  position:absolute;
-  margin: auto;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
+
+[name*='black'] {
+  background: linear-gradient(to bottom right, #b3b3b3, #000);
+}
+[name*='red'] {
   background: linear-gradient(to bottom right, #b3b3b3, #A00);
 }
 
