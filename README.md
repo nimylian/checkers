@@ -1,2 +1,1 @@
-# Sinatra-Starter
-An enhanced sinatra skeleton to account for basic user authentication
+Checkers - You know, like the board game
